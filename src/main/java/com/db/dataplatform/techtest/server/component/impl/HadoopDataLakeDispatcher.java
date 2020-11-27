@@ -32,7 +32,6 @@ public class HadoopDataLakeDispatcher implements DataLakeDispatcher {
         this.dataLakeEndpoint = dataLakeEndpoint;
     }
 
-
     @Override
     @Async
     @Retryable(value = HadoopClientException.class, maxAttemptsExpression = "${application.datalake.retries}", backoff = @Backoff(delayExpression = "${application.datalake.delayMs}"))

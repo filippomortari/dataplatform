@@ -20,7 +20,6 @@ public class ServerRestTemplateConfiguration {
 
     @Bean(name = "serverRestTemplate")
     public RestTemplate createRestTemplate() {
-
         return restTemplateBuilder.build();
     }
 

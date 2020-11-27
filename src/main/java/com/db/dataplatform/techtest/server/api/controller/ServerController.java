@@ -35,6 +35,7 @@ public class ServerController {
         log.info("Data envelope received: {}", dataEnvelope.getDataHeader().getName());
         boolean checksumPass = server.saveDataEnvelope(dataEnvelope);
         if (checksumPass) {
+            log.info("Dispatching data envelope to the data lake: {}", dataEnvelope.getDataHeader().getName());
             dataLakeDispatcher.dispatch(dataEnvelope);
         }
 
