@@ -14,9 +14,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotEmpty;
-import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Slf4j
@@ -51,7 +50,7 @@ public class ServerController {
     }
 
     @PatchMapping(value = "/update/{name}/{newBlockType}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<DataEnvelope> patchData(@Valid @NotEmpty @PathVariable("name") String name, @PathVariable("newBlockType") BlockTypeEnum newBlockType) {
+    public ResponseEntity<DataEnvelope> patchData(@PathVariable("name") @NotBlank @Size(max = 30) String name, @PathVariable("newBlockType") BlockTypeEnum newBlockType) {
         log.info("patch request received for: {}", name);
         return ResponseEntity
                 .of(server.updateBlockType(name, newBlockType));

@@ -5,7 +5,8 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.*;
 
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @JsonSerialize(as = DataHeader.class)
 @JsonDeserialize(as = DataHeader.class)
@@ -15,9 +16,10 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
 public class DataHeader {
 
-    @NotBlank
+    @NotEmpty
     private final String name;
 
+    @NotNull
     private final BlockTypeEnum blockType;
 
 }

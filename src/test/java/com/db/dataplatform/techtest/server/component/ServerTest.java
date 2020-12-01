@@ -3,9 +3,8 @@ package com.db.dataplatform.techtest.server.component;
 import com.db.dataplatform.techtest.server.api.model.DataBody;
 import com.db.dataplatform.techtest.server.api.model.DataEnvelope;
 import com.db.dataplatform.techtest.server.api.model.DataHeader;
-import com.db.dataplatform.techtest.server.component.Server;
 import com.db.dataplatform.techtest.server.component.impl.ServerImpl;
-import com.db.dataplatform.techtest.server.mapper.ServerMapperConfiguration;
+import com.db.dataplatform.techtest.server.configuration.ServerMapperConfiguration;
 import com.db.dataplatform.techtest.server.persistence.BlockTypeEnum;
 import com.db.dataplatform.techtest.server.persistence.model.DataBodyEntity;
 import com.db.dataplatform.techtest.server.persistence.model.DataHeaderEntity;
@@ -18,13 +17,11 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.modelmapper.ModelMapper;
 
-import java.time.Instant;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
 import static com.db.dataplatform.techtest.TestDataHelper.*;
-import static com.db.dataplatform.techtest.TestDataHelper.createTestDataBodyEntity;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.BDDMockito.given;

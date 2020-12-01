@@ -41,7 +41,6 @@ public class TechTestApplicationIT {
         // THEN
         assertThat(pushResponse.getChecksumPass()).isEqualTo(true);
 
-
         Awaitility
                 .await()
                 .pollDelay(5000, TimeUnit.MILLISECONDS)

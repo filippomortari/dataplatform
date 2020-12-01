@@ -4,19 +4,19 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.*;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotEmpty;
 
 @JsonSerialize(as = DataBody.class)
 @JsonDeserialize(as = DataBody.class)
-    @Getter
+@Getter
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
 public class DataBody {
 
-    @NotNull
+    @NotEmpty
     private final String dataBody;
 
-    @NotNull
+    @NotEmpty
     private final String dataMD5Checksum;
 }

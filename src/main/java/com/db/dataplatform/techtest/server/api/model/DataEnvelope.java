@@ -15,10 +15,11 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
 public class DataEnvelope {
 
-    @NotNull
     @Valid
+    @NotNull
     private final DataHeader dataHeader;
 
+    @Valid
     @NotNull
     private final DataBody dataBody;
 }
